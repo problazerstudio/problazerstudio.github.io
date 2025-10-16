@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailspace - Pro Blazer Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Pro Blazer Studio</div>
+        <ul class="navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Mission</a></li>
+            <li><a href="projects.html">The Lab</a></li>
+            <li><a href="knowledge.html" class="active">Trailspace</a></li>
+            <li><a href="community.html">Collab Ground</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1 class="section-title">Trailspace</h1>
+        <p style="text-align: center; color: var(--text-gray); max-width: 700px; margin: -1rem auto 3rem;">
+            Tips, tutorials, and insights from the Salesforce and AI trenches.
+        </p>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Articles</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="admin">Admin</button>
+            <button class="filter-btn" data-filter="developer">Developer</button>
+            <button class="filter-btn" data-filter="copilot">Copilot</button>
+        </div>
+
+        <div class="article-list">
+            <article class="article-item" data-category="ai copilot">
+                <div class="project-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Einstein Copilot</span>
+                </div>
+                <h2 style="color: var(--primary-color); margin: 1rem 0;">Building Your First Einstein Copilot Action</h2>
+                <div class="article-meta">
+                    <span>📅 Jan 15, 2025</span>
+                    <span>⏱️ 8 min read</span>
+                    <span>👤 Pro Blazer</span>
+                </div>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    A step-by-step guide to creating custom Copilot actions that integrate seamlessly with your Salesforce org. 
+                    Learn how to define actions, set up prompts, and test your AI-powered workflows.
+                </p>
+                <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Read More →</a>
+            </article>
+
+            <article class="article-item" data-category="developer">
+                <div class="project-tags">
+                    <span class="tag">LWC</span>
+                    <span class="tag">Developer</span>
+                </div>
+                <h2 style="color: var(--primary-color); margin: 1rem 0;">Advanced LWC Patterns: State Management Made Simple</h2>
+                <div class="article-meta">
+                    <span>📅 Jan 10, 2025</span>
+                    <span>⏱️ 12 min read</span>
+                    <span>👤 Pro Blazer</span>
+                </div>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    Dive deep into Lightning Web Components state management. Explore best practices for handling component 
+                    state, parent-child communication, and performance optimization techniques.
+                </p>
+                <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Read More →</a>
+            </article>
+
+            <article class="article-item" data-category="admin">
+                <div class="project-tags">
+                    <span class="tag">Admin</span>
+                    <span class="tag">Flow</span>
+                </div>
+                <h2 style="color: var(--primary-color); margin: 1rem 0;">10 Flow Builder Tips Every Admin Should Know</h2>
+                <div class="article-meta">
+                    <span>📅 Jan 5, 2025</span>
+                    <span>⏱️ 6 min read</span>
+                    <span>👤 Pro Blazer</span>
+                </div>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    Master Flow Builder with these essential tips and tricks. From debugging techniques to performance 
+                    optimization, elevate your automation game and build more efficient workflows.
+                </p>
+                <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Read More →</a>
+            </article>
+
+            <article class="article-item" data-category="ai developer">
+                <div class="project-tags">
+                    <span class="tag">AI</span>
+                    <span class="tag">Apex</span>
+                </div>
+                <h2 style="color: var(--primary-color); margin: 1rem 0;">Integrating External AI Models with Salesforce</h2>
+                <div class="article-meta">
+                    <span>📅 Dec 28, 2024</span>
+                    <span>⏱️ 15 min read</span>
+                    <span>👤 Pro Blazer</span>
+                </div>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    Learn how to connect OpenAI, Anthropic, and other AI models to your Salesforce org using Apex callouts. 
+                    Includes real examples and security best practices.
+                </p>
+                <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Read More →</a>
+            </article>
+
+            <article class="article-item" data-category="copilot admin">
+                <div class="project-tags">
+                    <span class="tag">Copilot</span>
+                    <span class="tag">Service Cloud</span>
+                </div>
+                <h2 style="color: var(--primary-color); margin: 1rem 0;">Copilot for Service: Boost Agent Productivity by 50%</h2>
+                <div class="article-meta">
+                    <span>📅 Dec 20, 2024</span>
+                    <span>⏱️ 10 min read</span>
+                    <span>👤 Pro Blazer</span>
+                </div>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    Discover how to configure and optimize Einstein Copilot for Service Cloud. Real-world use cases and 
+                    implementation strategies that deliver measurable results.
+                </p>
+                <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Read More →</a>
+            </article>
+
+            <article class="article-item" data-category="developer">
+                <div class="project-tags">
+                    <span class="tag">Testing</span>
+                    <span class="tag">Apex</span>
+                </div>
+                <h2 style="color: var(--primary-color); margin: 1rem 0;">Test-Driven Development in Salesforce: A Practical Guide</h2>
+                <div class="article-meta">
+                    <span>📅 Dec 15, 2024</span>
+                    <span>⏱️ 14 min read</span>
+                    <span>👤 Pro Blazer</span>
+                </div>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    Master TDD in Salesforce with practical examples and patterns. Write better tests, improve code quality, 
+                    and deploy with confidence using proven testing strategies.
+                </p>
+                <a href="#" class="btn btn-outline" style="margin-top: 1rem;">Read More →</a>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Pro Blazer Studio. Built by Trailblazers, for Trailblazers.</p>
+    </footer>
+</body>
+</html>
