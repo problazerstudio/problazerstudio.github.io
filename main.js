@@ -232,3 +232,60 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
+async function getSalesforceToken() {
+    const clientId = '3MVG9rZjd7MXFdLiRvpf9OFyAwy6tmRgyWM32i7V2MBlB4K.Yu4zq6X5V7xk46hulc1EyiWsWTv8UKRNKJPFX';
+    const clientSecret = 'A1EAEF479C5441F5901AF71FD221ECE6946A17316A96503681317E0675A434BD';
+    const authUrl = 'https://orgfarm-47cedb95ea-dev-ed.develop.my.salesforce.com/services/oauth2/token';
+
+    const params = new URLSearchParams();
+    params.append('grant_type', 'client_credentials');
+    params.append('client_id', clientId);
+    params.append('client_secret', clientSecret);
+
+    const response = await fetch(authUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: params
+    });
+
+    if (!response.ok) throw new Error(`Token fetch failed: ${response.status}`);
+    return response.json();
+}
+
+// Step 2: Call lightningoutsingleaccess using the token
+async function getLightningOutSingleAccess() {
+    try {
+        const tokenData = await getSalesforceToken();
+
+        const instanceUrl = tokenData.instance_url;
+        const accessToken = tokenData.access_token;
+        const appId = '1UsgK00000000rFSAQ'; // e.g. 06Pxx000000XXXXX
+
+        const params = new URLSearchParams();
+        params.append('access_token', decodeURIComponent(accessToken));
+        params.append('lightning_out_app_id', appId);
+
+        const response = await fetch(
+            `${instanceUrl}/services/oauth2/lightningoutsingleaccess`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: params
+            }
+        );
+
+        console.log('Status:', response.status);
+        const data = await response.json();
+        console.log('Success:', data);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Step 3: Trigger on page load or when needed
+document.addEventListener('DOMContentLoaded', getLightningOutSingleAccess);
